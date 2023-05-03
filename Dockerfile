@@ -82,7 +82,7 @@ FROM registry.access.redhat.com/ubi8/openjdk-17:1.14
 ENV LANGUAGE='en_US:en'
 
 
-COPY target/lib/* /deployments/lib/
+#COPY target/lib/* /deployments/lib/
 COPY target/*-runner.jar /deployments/quarkus-run.jar
 
 EXPOSE 8080
