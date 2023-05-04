@@ -24,7 +24,15 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Cache Maven dependencies
+      uses: actions/cache@v2
+      with:
+        path: ~/.m2/repository
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-maven-
 
     - name: Set up JDK 17
       uses: actions/setup-java@v3
@@ -33,8 +41,8 @@ jobs:
         distribution: 'temurin'
 
     - name: Build with Maven
-      run: mvn clean package
-      
+      run: mvn package --file pom.xml
+
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
     
