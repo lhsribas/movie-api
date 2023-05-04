@@ -16,8 +16,9 @@ on:
 
 env:
   ARTIFACT: movie-api
+  DOCKER_REGISTRY: docker.io
   DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-  DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+  DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
 
 jobs:
   development:
@@ -53,9 +54,9 @@ jobs:
         context: .
         push: true
         tags: |
-          ${{ env.DOCKER_USERNAME }}/${{ env.ARTIFACT }}:dev
-          ${{ env.DOCKER_USERNAME }}/${{ env.ARTIFACT }}:latest
+          ${{ env.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ env.ARTIFACT }}:dev
+          ${{ env.DOCKER_REGISTRY }}/${{ secrets.DOCKER_USERNAME }}/${{ env.ARTIFACT }}:latest
       env:
-        DOCKER_USERNAME: ${{ env.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ env.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
         
