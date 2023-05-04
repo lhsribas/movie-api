@@ -36,15 +36,6 @@ jobs:
     - name: Compile & Package
       run: ./mvnw clean package
 
-    - name: Verify workspace folder
-      run: "ls ${{ github.workspace }}"
-
-    - name: Verify target folder
-      run: "ls ${{ github.workspace }}/target"
-
-    - name: Verify target folder
-      run: "ls"
-
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
 
