@@ -34,7 +34,13 @@ jobs:
         cache: maven
 
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn clean package
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: movie-api-1.0.0-SNAPSHOT.jar
+        path: /tmp/target/movie-api-1.0.0-SNAPSHOT.jar
       
     - name: Set up QEMU
       uses: docker/setup-qemu-action@v2
