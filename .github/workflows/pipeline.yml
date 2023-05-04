@@ -48,16 +48,11 @@ jobs:
     - name: Verify target folder
       run: "ls"
 
-    - name: Build and push
-      uses: docker/build-push-action@v4
-      with:
-        context: .
-        push: true
-        tags: |
-          ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.ARTEFACT_ID }}:latest
-          ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.ARTEFACT_ID }}:dev
+    - name: Manual Docker Build
+      run: "docker built -t movie-api ."
 
 
-      
+
+
 
 
