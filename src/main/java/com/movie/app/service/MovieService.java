@@ -5,6 +5,7 @@ import com.movie.domain.usecase.MovieSearchUserCase;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MovieService {
 
@@ -22,14 +23,14 @@ public class MovieService {
         return this.useCase.getMovieRoot().getMovies()
                 .stream()
                 .filter(movies ->  contains(genre, movies.getGenres()))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     public List<Movie> getMoviesByYear(final String year){
         return this.useCase.getMovieRoot().getMovies()
                 .stream()
                 .filter(movies -> movies.getYear().equals(year))
-                .toList();
+                .collect(Collectors.toList());
     }
 
     private boolean contains(final String str, final ArrayList<String> strArray) {
@@ -39,6 +40,7 @@ public class MovieService {
 
         return strArray.stream()
                 .map(String::toUpperCase)
-                .toList().contains(str.toUpperCase());
+                .collect(Collectors.toList())
+                .contains(str.toUpperCase());
     }
 }
