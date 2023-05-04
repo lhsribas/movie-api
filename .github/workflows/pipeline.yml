@@ -33,7 +33,7 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
 
-    - name: Compile
+    - name: Compile & Package
       run: ./mvnw clean package
 
     - name: Verify workspace folder
