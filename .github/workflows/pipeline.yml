@@ -46,18 +46,6 @@ jobs:
         path: ${{ github.workspace }}/target/*.jar
         retention-days: 1
 
-
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - uses: actions/download-artifact@v1
-      with:
-        name: jar-artifact
-        path: target/
-
     - name: Verify Folder
       run: |
         - ls
