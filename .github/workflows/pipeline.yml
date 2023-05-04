@@ -49,7 +49,7 @@ jobs:
       run: "ls"
 
     - name: Manual Docker Build
-      run: "docker built -t movie-api ."
+      run: "docker build -t movie-api ."
 
 
 
