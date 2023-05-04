@@ -49,4 +49,7 @@ jobs:
     - name: Verify Folder
       run: "ls ${{ github.workspace }}"
 
+    - name: Verify Folder
+      run: "ls ${{ github.workspace }}/target"
+
 
