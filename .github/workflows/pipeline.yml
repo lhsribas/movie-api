@@ -39,10 +39,13 @@ jobs:
     - name: Build a package
       run: mvn -B package --file pom.xml
 
-    - name: Verify Folder
+    - name: Verify workspace folder
       run: "ls ${{ github.workspace }}"
 
-    - name: Verify Folder
+    - name: Verify target folder
       run: "ls ${{ github.workspace }}/target"
+
+    - name: Verify target folder
+      run: "ls"
 
 
