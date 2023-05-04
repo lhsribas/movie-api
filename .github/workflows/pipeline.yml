@@ -39,13 +39,6 @@ jobs:
     - name: Build a package
       run: mvn -B package --file pom.xml
 
-    - name: Temporarily save jar artifact
-      uses: actions/upload-artifact@v2
-      with:
-        name: jar-artifact
-        path: ${{ github.workspace }}/target/*.jar
-        retention-days: 1
-
     - name: Verify Folder
       run: "ls ${{ github.workspace }}"
 
