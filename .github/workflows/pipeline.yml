@@ -48,6 +48,6 @@ jobs:
 
     - name: Verify Folder
       run: |
-        - ls
+        - ls ${{ github.workspace }}
 
 
