@@ -17,7 +17,7 @@ on:
 env:
   ARTIFACT: movie-api
   DOCKER_REGISTRY: docker.io
-  DOCKER_USERNAME: lhsribas
+  DOCKER_PATH: lhsribas
 
 jobs:
   development:
@@ -56,6 +56,6 @@ jobs:
           ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.ARTIFACT }}:dev
           ${{ env.DOCKER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.ARTIFACT }}:latest
       env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKERHUB_TOKEN }}
         
