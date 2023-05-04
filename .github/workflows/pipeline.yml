@@ -34,10 +34,7 @@ jobs:
         cache: 'maven'
 
     - name: Compile
-      run: mvn -B compile --file pom.xml
-
-    - name: Build a package
-      run: mvn -B package --file pom.xml
+      run: ./mvnw clean package
 
     - name: Verify workspace folder
       run: "ls ${{ github.workspace }}"
