@@ -83,7 +83,7 @@ ENV LANGUAGE='en_US:en'
 
 
 #COPY target/lib/* /deployments/lib/
-COPY target/movie-api-1.0.0-SNAPSHOT.jar /deployments/quarkus-run.jar
+COPY /tmp/target/movie-api-1.0.0-SNAPSHOT.jar /deployments/quarkus-run.jar
 
 EXPOSE 8080
 USER 185
