@@ -39,7 +39,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get400(){
         return Response.status(400)
-                .entity("{\"message\": \"400\"}")
+                .entity("{\"status\": 400, \"message\": \"error\"}")
                 .build();
     }
 
@@ -48,7 +48,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get401(){
         return Response.status(401)
-                .entity("{\"message\": \"401\"}")
+                .entity("{\"status\": 401, \"message\": \"error\"}")
                 .build();
     }
 
@@ -57,7 +57,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get403(){
         return Response.status(403)
-                .entity("{\"message\": \"403\"}")
+                .entity("{\"status\": 403, \"message\": \"error\"}")
                 .build();
     }
 
@@ -66,7 +66,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get404(){
         return Response.status(404)
-                .entity("{\"message\": \"404\"}")
+                .entity("{\"status\": 404, \"message\": \"error\"}")
                 .build();
     }
 
@@ -75,7 +75,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get405(){
         return Response.status(405)
-                .entity("{\"message\": \"405\"}")
+                .entity("{\"status\": 405, \"message\": \"error\"}")
                 .build();
     }
 
@@ -84,7 +84,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get408(){
         return Response.status(408)
-                .entity("{\"message\": \"408\"}")
+                .entity("{\"status\": 408, \"message\": \"error\"}")
                 .build();
     }
 
@@ -93,7 +93,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get409(){
         return Response.status(409)
-                .entity("{\"message\": \"409\"}")
+                .entity("\"status\": 409, \"message\": \"error\"}")
                 .build();
     }
 
@@ -102,7 +102,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get413(){
         return Response.status(413)
-                .entity("{\"message\": \"413\"}")
+                .entity("\"status\": 413, \"message\": \"error\"")
                 .build();
     }
 
@@ -111,7 +111,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get415(){
         return Response.status(415)
-                .entity("{\"message\": \"415\"}")
+                .entity("{\"status\": 415, \"message\": \"error\"}")
                 .build();
     }
 
@@ -142,7 +142,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get500(){
         return Response.status(500)
-                .entity("{\"message\": \"500\"}")
+                .entity("{ \"status\": 500, \"message\": \"error\"}")
                 .build();
     }
 
@@ -151,7 +151,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get503(){
         return Response.status(503)
-                .entity("{\"message\": \"503\"}")
+                .entity("{\"status\": 503, \"message\": \"error\"}")
                 .build();
     }
 
