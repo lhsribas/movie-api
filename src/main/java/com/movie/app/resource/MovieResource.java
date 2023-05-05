@@ -1,10 +1,7 @@
 package com.movie.app.resource;
 
 import com.movie.app.service.MovieService;
-import jakarta.ws.rs.GET;
-import jakarta.ws.rs.Path;
-import jakarta.ws.rs.PathParam;
-import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
@@ -155,6 +152,14 @@ public class MovieResource {
     public Response get503(){
         return Response.status(503)
                 .entity("{\"message\": \"503\"}")
+                .build();
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response requestSizeLimit(final String body){
+        return Response.status(200)
+                .entity(body)
                 .build();
     }
 }
