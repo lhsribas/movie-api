@@ -102,7 +102,7 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response get413(){
         return Response.status(413)
-                .entity("{\"status\": 413, \"message\": \"error\"")
+                .entity("{\"status\": 413, \"message\": \"error\"}")
                 .build();
     }
 
